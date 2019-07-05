@@ -10,6 +10,14 @@ import UIKit
 import Firebase
 
 class ChatVC: UIViewController {
+    
+    @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var messageTxt: UITextField!
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

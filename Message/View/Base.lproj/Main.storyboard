@@ -182,13 +182,65 @@
                     <view key="view" contentMode="scaleToFill" id="SSl-0U-Tm3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07x-1E-2Tg">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xny-ZG-KQQ">
+                                        <rect key="frame" x="10" y="5" width="305" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="jT3-eU-8Nj"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnV-La-X8A">
+                                        <rect key="frame" x="320" y="5" width="50" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ck0-G4-xk7"/>
+                                            <constraint firstAttribute="width" constant="50" id="eos-Ll-CzL"/>
+                                        </constraints>
+                                        <state key="normal" title="Send"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vnV-La-X8A" firstAttribute="leading" secondItem="xny-ZG-KQQ" secondAttribute="trailing" constant="5" id="27I-bf-Kmz"/>
+                                    <constraint firstItem="vnV-La-X8A" firstAttribute="top" secondItem="07x-1E-2Tg" secondAttribute="top" constant="5" id="b3Q-co-cg9"/>
+                                    <constraint firstAttribute="height" constant="50" id="kdO-av-obY"/>
+                                    <constraint firstItem="xny-ZG-KQQ" firstAttribute="top" secondItem="07x-1E-2Tg" secondAttribute="top" constant="5" id="nWR-dH-NIw"/>
+                                    <constraint firstAttribute="trailing" secondItem="vnV-La-X8A" secondAttribute="trailing" constant="5" id="pCO-4M-qFf"/>
+                                    <constraint firstItem="xny-ZG-KQQ" firstAttribute="leading" secondItem="07x-1E-2Tg" secondAttribute="leading" constant="10" id="xxe-PQ-O46"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fbN-Zm-4Oi">
+                                <rect key="frame" x="0.0" y="88" width="375" height="640"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="07x-1E-2Tg" firstAttribute="bottom" secondItem="MMD-Xy-OnP" secondAttribute="bottom" id="HQm-jE-ITf"/>
+                            <constraint firstItem="07x-1E-2Tg" firstAttribute="top" secondItem="fbN-Zm-4Oi" secondAttribute="bottom" id="Kwu-oi-fZR"/>
+                            <constraint firstItem="fbN-Zm-4Oi" firstAttribute="trailing" secondItem="MMD-Xy-OnP" secondAttribute="trailing" id="LAr-ZW-Tty"/>
+                            <constraint firstItem="07x-1E-2Tg" firstAttribute="leading" secondItem="MMD-Xy-OnP" secondAttribute="leading" id="NwO-lV-ydX"/>
+                            <constraint firstItem="fbN-Zm-4Oi" firstAttribute="leading" secondItem="MMD-Xy-OnP" secondAttribute="leading" id="QqN-rT-zJm"/>
+                            <constraint firstItem="fbN-Zm-4Oi" firstAttribute="top" secondItem="MMD-Xy-OnP" secondAttribute="top" id="bQu-QT-kdq"/>
+                            <constraint firstItem="07x-1E-2Tg" firstAttribute="trailing" secondItem="MMD-Xy-OnP" secondAttribute="trailing" id="thP-pt-4mB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MMD-Xy-OnP"/>
                     </view>
+                    <connections>
+                        <outlet property="chatTableView" destination="fbN-Zm-4Oi" id="t4T-4e-Cm9"/>
+                        <outlet property="heightConstraint" destination="Ck0-G4-xk7" id="K9S-ri-8B9"/>
+                        <outlet property="messageTxt" destination="xny-ZG-KQQ" id="4Se-AM-sVI"/>
+                        <outlet property="sendBtn" destination="vnV-La-X8A" id="gVi-qB-Ve4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQf-Yf-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3444" y="94"/>
+            <point key="canvasLocation" x="3444" y="93.842364532019715"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="82c-yz-neE">
@@ -287,6 +339,6 @@
         <image name="male-placeholder" width="390" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8v9-ZZ-owJ"/>
+        <segue reference="1Es-NA-rTI"/>
     </inferredMetricsTieBreakers>
 </document>
