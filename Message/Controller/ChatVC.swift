@@ -11,7 +11,7 @@ import Firebase
 
 class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITableViewDataSource {
 
-    let list = ["First Message" , "Second Message" , "Third Message"]
+    let list = ["First Message" , "Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message "  , "Third Message", "Second Message" , "Third Message", "Second Message" , "Third Message"]
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTxt: UITextField!
@@ -29,6 +29,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
+        
+        // Set automatic dimensions for row height
+        chatTableView.rowHeight = UITableView.automaticDimension
+        chatTableView.estimatedRowHeight = UITableView.automaticDimension
+
         
         // Create a Flexibale UIView to show Keyboard
         messageTxt.delegate = self
@@ -53,13 +58,13 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         messageTxt.endEditing(true)
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.5) {
-            self.heightConstraint.constant = 233
+        UIView.animate(withDuration: 0.4) {
+            self.heightConstraint.constant = 228
             self.view.layoutIfNeeded()
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.4) {
             self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
@@ -89,4 +94,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         cell.avatar.image = UIImage(named: "male-placeholder")
         return cell
     }
+    
+    // UITableViewAutomaticDimension calculates height of label contents/text
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    
 }
