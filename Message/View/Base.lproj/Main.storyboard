@@ -237,7 +237,7 @@
                     <connections>
                         <outlet property="chatTableView" destination="fbN-Zm-4Oi" id="t4T-4e-Cm9"/>
                         <outlet property="heightConstraint" destination="yx6-vI-gxs" id="C4G-iu-Dbf"/>
-                        <outlet property="messageTxt" destination="qyT-ao-Ta7" id="4Ex-fo-1n7"/>
+                        <outlet property="messageTextField" destination="qyT-ao-Ta7" id="4Ex-fo-1n7"/>
                         <outlet property="sendBtn" destination="ioG-Sz-GmI" id="JQW-YX-KZE"/>
                     </connections>
                 </viewController>
