@@ -69,6 +69,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatar" destination="IZR-LX-rMo" id="SHw-1x-AGC"/>
+                <outlet property="messageBackground" destination="91l-3L-LIP" id="tKx-Mz-zke"/>
                 <outlet property="messageBody" destination="Lyi-0g-97j" id="fAc-6B-ZmL"/>
                 <outlet property="sender" destination="eaK-Vh-Cmu" id="NIV-UB-PCm"/>
             </connections>

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITableViewDataSource {
 
@@ -112,6 +113,8 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             guard let  sender = snapshot["sender"] else { return }
             guard let  messageBody = snapshot["messageBody"] else { return }
             
+            
+            
             let message = Message(sender: sender, messageBody: messageBody)
             self.messageArray.append(message)
             self.chatTableView.reloadData()
@@ -132,7 +135,13 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         cell.avatar.image = UIImage(named: "male-placeholder")
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.sender.text = messageArray[indexPath.row].sender
-
+        
+        //Chnage Background
+        if cell.sender.text == Auth.auth().currentUser?.email {
+            cell.messageBackground.backgroundColor = UIColor.flatMint()
+        } else {
+            cell.messageBackground.backgroundColor = UIColor.flatGray()
+        }
         return cell
     }
     

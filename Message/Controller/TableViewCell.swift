@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var sender: UILabel!
     @IBOutlet weak var messageBody: UILabel!
+    @IBOutlet weak var messageBackground: UIView!
     
 
     override func awakeFromNib() {
