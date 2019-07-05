@@ -196,9 +196,67 @@
                     <view key="view" contentMode="scaleToFill" id="vQW-1H-UPi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="min-H6-Sot">
+                                <rect key="frame" x="20" y="108" width="335" height="92"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VUR-xd-4I6">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="3Yu-Ud-AU1"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Passwrod" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOY-6n-uah">
+                                        <rect key="frame" x="0.0" y="52" width="335" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="npP-PH-aKC"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muC-UY-hEf">
+                                <rect key="frame" x="20" y="220" width="335" height="40"/>
+                                <color key="backgroundColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="i8h-gk-Gpx"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginClicked:" destination="u3d-3a-Wrj" eventType="touchUpInside" id="hJH-qx-29n"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qvf-1U-C7s">
+                                <rect key="frame" x="169" y="280" width="37" height="37"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="min-H6-Sot" firstAttribute="top" secondItem="1Te-3F-v80" secondAttribute="top" constant="20" id="0kz-u3-CbQ"/>
+                            <constraint firstItem="muC-UY-hEf" firstAttribute="top" secondItem="min-H6-Sot" secondAttribute="bottom" constant="20" id="AJC-4q-tPF"/>
+                            <constraint firstItem="1Te-3F-v80" firstAttribute="trailing" secondItem="min-H6-Sot" secondAttribute="trailing" constant="20" id="KSj-Qt-GFp"/>
+                            <constraint firstItem="1Te-3F-v80" firstAttribute="trailing" secondItem="muC-UY-hEf" secondAttribute="trailing" constant="20" id="Kmy-GE-PBv"/>
+                            <constraint firstItem="qvf-1U-C7s" firstAttribute="centerX" secondItem="vQW-1H-UPi" secondAttribute="centerX" id="Mow-dE-RAs"/>
+                            <constraint firstItem="qvf-1U-C7s" firstAttribute="top" secondItem="muC-UY-hEf" secondAttribute="bottom" constant="20" id="WRR-50-WQL"/>
+                            <constraint firstItem="min-H6-Sot" firstAttribute="leading" secondItem="1Te-3F-v80" secondAttribute="leading" constant="20" id="pbi-F0-uYu"/>
+                            <constraint firstItem="muC-UY-hEf" firstAttribute="leading" secondItem="1Te-3F-v80" secondAttribute="leading" constant="20" id="tCx-tZ-eAL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Te-3F-v80"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="qvf-1U-C7s" id="scb-1G-dMz"/>
+                        <outlet property="emailTxt" destination="VUR-xd-4I6" id="qoy-6k-9fP"/>
+                        <outlet property="passwordTxt" destination="mOY-6n-uah" id="w18-Mr-1eR"/>
+                        <segue destination="qqV-ma-BQ5" kind="show" identifier="ToChatVC" id="1Es-NA-rTI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVc-eG-LGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,4 +285,7 @@
         <image name="Logo" width="725" height="731"/>
         <image name="male-placeholder" width="390" height="390"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Es-NA-rTI"/>
+    </inferredMetricsTieBreakers>
 </document>

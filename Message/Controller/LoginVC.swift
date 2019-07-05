@@ -7,25 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
-
+    
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .yellow
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func loginClicked(_ sender: Any) {
+        
+        activityIndicator.startAnimating()
+        guard let email = emailTxt.text , !email.isEmpty else { return }
+        guard let password = passwordTxt.text , !password.isEmpty else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, Error) in
+            if let error = Error {
+                print("Login Failed")
+                debugPrint(error.localizedDescription)
+                return
+            }
+            print("Login Successfuly!")
+            self.activityIndicator.stopAnimating()
+            self.performSegue(withIdentifier: "ToChatVC", sender: self)
+        }
     }
-    */
-
 }
