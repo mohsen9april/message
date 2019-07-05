@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>927257450142-bvjgmg59a63ns5taajlmbt8v22ddi2ht.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.927257450142-bvjgmg59a63ns5taajlmbt8v22ddi2ht</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCi5tOLK-uhe_lOn8j0IKqnW4uymSLNFgU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>927257450142</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Mohsen.Message</string>
+	<key>PROJECT_ID</key>
+	<string>message-d6785</string>
+	<key>STORAGE_BUCKET</key>
+	<string>message-d6785.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:927257450142:ios:8a5ab8e221aad47a</string>
+	<key>DATABASE_URL</key>
+	<string>https://message-d6785.firebaseio.com</string>
+</dict>
+</plist>

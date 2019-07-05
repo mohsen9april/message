@@ -14,7 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    
+    @IBAction func loginClicked(_ sender: Any) {
+        performSegue(withIdentifier: "ToLoginVC", sender: self)
+        
+    }
+    
+    @IBAction func registerClicked(_ sender: Any) {
+        performSegue(withIdentifier: "ToRegisterVC", sender: self)
+    }
+    
 }
 
