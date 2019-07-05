@@ -69,6 +69,7 @@
                     <connections>
                         <segue destination="u3d-3a-Wrj" kind="show" identifier="ToLoginVC" id="Tba-VP-QYr"/>
                         <segue destination="ceD-ne-9zt" kind="show" identifier="ToRegisterVC" id="6C4-7b-Dpk"/>
+                        <segue destination="qqV-ma-BQ5" kind="show" identifier="ToChatVC" id="8v9-ZZ-owJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -187,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQf-Yf-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3450" y="58"/>
+            <point key="canvasLocation" x="3444" y="94"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="82c-yz-neE">
@@ -286,6 +287,6 @@
         <image name="male-placeholder" width="390" height="390"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1Es-NA-rTI"/>
+        <segue reference="8v9-ZZ-owJ"/>
     </inferredMetricsTieBreakers>
 </document>

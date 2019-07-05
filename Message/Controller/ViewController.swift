@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //Check Login
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "ToChatVC", sender: self)
+        }
     }
-    
-    
+
     @IBAction func loginClicked(_ sender: Any) {
         performSegue(withIdentifier: "ToLoginVC", sender: self)
         
