@@ -15,6 +15,7 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     
     var messageArray = [Message]()
     
+    
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
@@ -111,26 +112,27 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             guard let  sender = snapshot["sender"] else { return }
             guard let  messageBody = snapshot["messageBody"] else { return }
             
-            print(sender)
-            print(messageBody)
+            let message = Message(sender: sender, messageBody: messageBody)
+            self.messageArray.append(message)
+            self.chatTableView.reloadData()
+
         }
-        
     }
-    
-    
-    
-    
-    
     
     //Configure TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        //return list.count
+        return messageArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath) as! TableViewCell
-        cell.messageBody.text = list[indexPath.row]
+        //cell.messageBody.text = list[indexPath.row]
+        
         cell.avatar.image = UIImage(named: "male-placeholder")
+        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.sender.text = messageArray[indexPath.row].sender
+
         return cell
     }
     
