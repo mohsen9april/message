@@ -17,6 +17,8 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     @IBOutlet weak var messageTxt: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHieghtConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +60,14 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         messageTxt.endEditing(true)
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.4) {
-            self.heightConstraint.constant = 228
+        UIView.animate(withDuration: 0.3) {
+            
+            self.heightConstraint.constant = 343
             self.view.layoutIfNeeded()
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
@@ -99,6 +102,4 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-
-    
 }
