@@ -206,6 +206,9 @@
                                             <constraint firstAttribute="height" constant="40" id="shz-3N-TpK"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendButtonClicked:" destination="qqV-ma-BQ5" eventType="touchUpInside" id="kPG-xI-kLQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -235,6 +238,7 @@
                         <outlet property="chatTableView" destination="fbN-Zm-4Oi" id="t4T-4e-Cm9"/>
                         <outlet property="heightConstraint" destination="yx6-vI-gxs" id="C4G-iu-Dbf"/>
                         <outlet property="messageTxt" destination="qyT-ao-Ta7" id="4Ex-fo-1n7"/>
+                        <outlet property="sendBtn" destination="ioG-Sz-GmI" id="JQW-YX-KZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQf-Yf-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>

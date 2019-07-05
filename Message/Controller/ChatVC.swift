@@ -9,19 +9,26 @@
 import UIKit
 import Firebase
 
-class ChatVC: UIViewController, UITextFieldDelegate {
-    
+class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITableViewDataSource {
+
     let list = ["First Message" , "Second Message" , "Third Message"]
     
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTxt: UITextField!
-    //@IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "ChatVC"
         self.navigationItem.hidesBackButton = true
+        
+        
+        //Register TableViewCell XibFle
+        chatTableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CellId")
+        
+        chatTableView.delegate = self
+        chatTableView.dataSource = self
         
         // Create a Flexibale UIView to show Keyboard
         messageTxt.delegate = self
@@ -56,5 +63,30 @@ class ChatVC: UIViewController, UITextFieldDelegate {
             self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
+    }
+    
+    
+    
+    @IBAction func sendButtonClicked(_ sender: Any) {
+        print(123)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    //Configure TableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath) as! TableViewCell
+        cell.messageBody.text = list[indexPath.row]
+        cell.avatar.image = UIImage(named: "male-placeholder")
+        return cell
     }
 }

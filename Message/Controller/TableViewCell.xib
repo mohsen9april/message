@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Message" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" rowHeight="120" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="Message" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -72,7 +72,7 @@
                 <outlet property="messageBody" destination="Lyi-0g-97j" id="fAc-6B-ZmL"/>
                 <outlet property="sender" destination="eaK-Vh-Cmu" id="NIV-UB-PCm"/>
             </connections>
-            <point key="canvasLocation" x="131.8840579710145" y="127.23214285714285"/>
+            <point key="canvasLocation" x="78" y="128"/>
         </tableViewCell>
     </objects>
     <resources>
