@@ -11,6 +11,8 @@ import Firebase
 
 class ChatVC: UIViewController, UITextFieldDelegate {
     
+    let list = ["First Message" , "Second Message" , "Third Message"]
+    
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var messageTxt: UITextField!
     //@IBOutlet weak var sendBtn: UIButton!
@@ -55,8 +57,4 @@ class ChatVC: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
         }
     }
-    
-    
-    
-    
 }

@@ -17,6 +17,8 @@
 		EDE8A4DC22CF2B2E0089E1A0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8A4DB22CF2B2E0089E1A0 /* LoginVC.swift */; };
 		EDE8A4DE22CF2B400089E1A0 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8A4DD22CF2B400089E1A0 /* RegisterVC.swift */; };
 		EDE8A4E022CF2FE90089E1A0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8A4DF22CF2FE90089E1A0 /* ChatVC.swift */; };
+		EDF0D6D422CF5F6D00B42A06 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D6D222CF5F6D00B42A06 /* TableViewCell.swift */; };
+		EDF0D6D522CF5F6D00B42A06 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF0D6D322CF5F6D00B42A06 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		EDE8A4DB22CF2B2E0089E1A0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EDE8A4DD22CF2B400089E1A0 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		EDE8A4DF22CF2FE90089E1A0 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		EDF0D6D222CF5F6D00B42A06 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		EDF0D6D322CF5F6D00B42A06 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				EDE8A4DB22CF2B2E0089E1A0 /* LoginVC.swift */,
 				EDE8A4DD22CF2B400089E1A0 /* RegisterVC.swift */,
 				EDE8A4DF22CF2FE90089E1A0 /* ChatVC.swift */,
+				EDF0D6D222CF5F6D00B42A06 /* TableViewCell.swift */,
+				EDF0D6D322CF5F6D00B42A06 /* TableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDE8A4CF22CF27580089E1A0 /* LaunchScreen.storyboard in Resources */,
+				EDF0D6D522CF5F6D00B42A06 /* TableViewCell.xib in Resources */,
 				EDE8A4D722CF29840089E1A0 /* GoogleService-Info.plist in Resources */,
 				EDE8A4CC22CF27580089E1A0 /* Assets.xcassets in Resources */,
 				EDE8A4CA22CF27570089E1A0 /* Main.storyboard in Resources */,
@@ -256,6 +263,7 @@
 				EDE8A4C722CF27570089E1A0 /* ViewController.swift in Sources */,
 				EDE8A4DE22CF2B400089E1A0 /* RegisterVC.swift in Sources */,
 				EDE8A4C522CF27570089E1A0 /* AppDelegate.swift in Sources */,
+				EDF0D6D422CF5F6D00B42A06 /* TableViewCell.swift in Sources */,
 				EDE8A4DC22CF2B2E0089E1A0 /* LoginVC.swift in Sources */,
 				EDE8A4E022CF2FE90089E1A0 /* ChatVC.swift in Sources */,
 			);
