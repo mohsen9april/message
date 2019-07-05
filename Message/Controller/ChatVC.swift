@@ -45,7 +45,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         
         //Set barButton
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        
+        retriveMessages()
+        
     }
+    
     @objc func handleLogout(){
         do {
             try Auth.auth().signOut()
@@ -99,7 +103,19 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         }
     }
     
-    
+    func retriveMessages(){
+        
+        let messageDB = Database.database().reference().child("Messages")
+        messageDB.observe(.childAdded) { (DataSnapshot) in
+            let snapshot = DataSnapshot.value as! [String: String]
+            guard let  sender = snapshot["sender"] else { return }
+            guard let  messageBody = snapshot["messageBody"] else { return }
+            
+            print(sender)
+            print(messageBody)
+        }
+        
+    }
     
     
     
