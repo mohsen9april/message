@@ -19,6 +19,7 @@
 		EDE8A4E022CF2FE90089E1A0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8A4DF22CF2FE90089E1A0 /* ChatVC.swift */; };
 		EDF0D6D422CF5F6D00B42A06 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D6D222CF5F6D00B42A06 /* TableViewCell.swift */; };
 		EDF0D6D522CF5F6D00B42A06 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDF0D6D322CF5F6D00B42A06 /* TableViewCell.xib */; };
+		EDF0D6D722CF787200B42A06 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF0D6D622CF787200B42A06 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EDE8A4DF22CF2FE90089E1A0 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		EDF0D6D222CF5F6D00B42A06 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EDF0D6D322CF5F6D00B42A06 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		EDF0D6D622CF787200B42A06 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		EDE8A4DA22CF29F20089E1A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EDF0D6D622CF787200B42A06 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				EDF0D6D422CF5F6D00B42A06 /* TableViewCell.swift in Sources */,
 				EDE8A4DC22CF2B2E0089E1A0 /* LoginVC.swift in Sources */,
 				EDE8A4E022CF2FE90089E1A0 /* ChatVC.swift in Sources */,
+				EDF0D6D722CF787200B42A06 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
