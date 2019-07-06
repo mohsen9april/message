@@ -86,6 +86,9 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     
     //Save Messages to Database
     @IBAction func sendButtonClicked(_ sender: Any) {
+        
+        guard let messageBodynotEmpty = messageTextField.text , !messageBodynotEmpty.isEmpty else { return }
+        
         //First Disable Button and Text for
         messageTextField.isEnabled = false
         sendBtn.isEnabled = false

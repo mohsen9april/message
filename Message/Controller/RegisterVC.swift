@@ -35,6 +35,11 @@ class RegisterVC: UIViewController {
         lunchImagePicker()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+
+    
     @IBAction func registerClicked(_ sender: Any) {
         activityIndicator.startAnimating()
         guard let username = usernameTxt.text , !username.isEmpty else { return }
