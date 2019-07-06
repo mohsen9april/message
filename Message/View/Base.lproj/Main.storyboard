@@ -167,6 +167,7 @@
                         <outlet property="confirmPassTxt" destination="Mu6-a1-ETX" id="d10-nC-ASr"/>
                         <outlet property="emailTxt" destination="s26-Rc-Ejm" id="2ZX-Hv-IHp"/>
                         <outlet property="passwordTxt" destination="Cgi-vg-KpT" id="h5v-YJ-Rku"/>
+                        <outlet property="userProfile" destination="dDU-iL-uWE" id="Uzg-3a-Fb3"/>
                         <outlet property="usernameTxt" destination="aeh-Hj-NcO" id="Jba-n9-wVO"/>
                         <segue destination="qqV-ma-BQ5" kind="show" identifier="ToChatVC" id="ipA-Gm-jms"/>
                     </connections>

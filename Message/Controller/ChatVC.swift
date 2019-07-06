@@ -112,9 +112,7 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             let snapshot = DataSnapshot.value as! [String: String]
             guard let  sender = snapshot["sender"] else { return }
             guard let  messageBody = snapshot["messageBody"] else { return }
-            
-            
-            
+
             let message = Message(sender: sender, messageBody: messageBody)
             self.messageArray.append(message)
             self.chatTableView.reloadData()
