@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import ChameleonFramework
+import Kingfisher
 
 class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITableViewDataSource {
 
@@ -170,12 +171,18 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellId", for: indexPath) as! TableViewCell
         //cell.messageBody.text = list[indexPath.row]
-        
-        cell.avatar.image = UIImage(named: "male-placeholder")
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.sender.text = messageArray[indexPath.row].username
         print(messageArray[indexPath.row].email)
         print(Auth.auth().currentUser?.email ?? "")
+        
+        //Show user avatar
+        //cell.avatar.image = UIImage(named: "male-placeholder")
+        let url = URL(string: messageArray[indexPath.row].usersImageProfileLink)
+        let placeholder =  UIImage(named: "male-placeholder")
+        cell.avatar.kf.setImage(with: url , placeholder: placeholder)
+
+        
         //Chnage Background
         if  Auth.auth().currentUser?.email ?? ""  == (messageArray[indexPath.row].email).lowercased() {
             cell.messageBackground.backgroundColor = UIColor.flatMint()
