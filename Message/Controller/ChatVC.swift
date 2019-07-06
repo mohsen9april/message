@@ -15,6 +15,7 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     let list = ["First Message" , "Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message Second Message "  , "Third Message", "Second Message" , "Third Message", "Second Message" , "Third Message"]
     
     var messageArray = [Message]()
+    var userContenArray = [UserContent]()
     
     
     @IBOutlet weak var chatTableView: UITableView!
@@ -27,6 +28,7 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         self.title = "ChatVC"
         self.navigationItem.hidesBackButton = true
         
+        fetchUserContent()
         
         //Register TableViewCell XibFle
         chatTableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "CellId")
@@ -104,21 +106,44 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             self.messageTextField.text = ""
         }
     }
-    
+    var count = 0
     func retriveMessages(){
         
+        //Fetch Data from Message Database ( sender & MessageBody)
         let messageDB = Database.database().reference().child("Messages")
         messageDB.observe(.childAdded) { (DataSnapshot) in
             let snapshot = DataSnapshot.value as! [String: String]
             guard let  sender = snapshot["sender"] else { return }
             guard let  messageBody = snapshot["messageBody"] else { return }
-
             let message = Message(sender: sender, messageBody: messageBody)
+            
+            
+            self.count = self.count + 1
+            print(self.count)
+            
+            
             self.messageArray.append(message)
             self.chatTableView.reloadData()
 
         }
     }
+    
+    func fetchUserContent(){
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        print("uid Current user is : ******************")
+        print(uid)
+        
+        Database.database().reference().child("users").child(uid).observe(DataEventType.value) { (Datasnapshot) in
+            let snapshot = Datasnapshot.value as! [String: String]
+            guard let email = snapshot["email"] else { return }
+            guard let username = snapshot["username"] else { return }
+            guard let usersImageProfileLink = snapshot["usersImageProfile"] else { return }
+            let usercontent = UserContent(email: email, username: username, userImageProfileLink: usersImageProfileLink)
+            self.userContenArray.append(usercontent)
+
+        }
+    }
+    
     
     //Configure TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
