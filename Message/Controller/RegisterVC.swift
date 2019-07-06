@@ -72,11 +72,24 @@ class RegisterVC: UIViewController {
                         debugPrint(error.localizedDescription)
                         return
                     }
-                    print("Url of image uploaded fetch successfuly !")
-                    guard let url = url else { return }
-                    print(url.absoluteString)
-                    self.activityIndicator.stopAnimating()
-                    self.performSegue(withIdentifier: "ToChatVC", sender: self)
+                    print("Url of image uploaded, fetch successfuly !")
+                    guard let url = url?.absoluteString else { return }
+                    print(url)
+                    
+                    //Save url & username & email in to Database
+                    guard let uid = Auth.auth().currentUser?.uid else { return }
+                    let dictionary : [String : Any] = ["username": username , "usersImageProfile" : url , "email" : email]
+                    let values = [uid : dictionary]
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (Error, reference) in
+                        if let error = Error {
+                            print("Failed to save users content to database")
+                            print(error.localizedDescription)
+                            return
+                        }
+                        print("users regisetr data saved to Database successfuly!")
+                        self.activityIndicator.stopAnimating()
+                        self.performSegue(withIdentifier: "ToChatVC", sender: self)
+                    })
                 })
             })
         }
