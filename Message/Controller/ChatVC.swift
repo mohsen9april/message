@@ -148,7 +148,10 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             let snapshot = DataSnapshot.value as! [String: String]
             guard let  sender = snapshot["sender"] else { return }
             guard let  messageBody = snapshot["messageBody"] else { return }
-            let message = Message(sender: sender, messageBody: messageBody)
+            guard let  email = snapshot["email"] else { return }
+            guard let username = snapshot["username"] else { return }
+            guard let usersImageProfileLink = snapshot["usersImageProfileLink"] else { return }
+            let message = Message(sender: sender, messageBody: messageBody, email: email, username: username, usersImageProfileLink: usersImageProfileLink)
 
             self.count = self.count + 1
             print(self.count)
@@ -170,10 +173,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         
         cell.avatar.image = UIImage(named: "male-placeholder")
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.sender.text = messageArray[indexPath.row].sender
-        
+        cell.sender.text = messageArray[indexPath.row].username
+        print(messageArray[indexPath.row].email)
+        print(Auth.auth().currentUser?.email ?? "")
         //Chnage Background
-        if cell.sender.text == Auth.auth().currentUser?.email {
+        if  Auth.auth().currentUser?.email ?? ""  == (messageArray[indexPath.row].email).lowercased() {
             cell.messageBackground.backgroundColor = UIColor.flatMint()
         } else {
             cell.messageBackground.backgroundColor = UIColor.flatGray()
