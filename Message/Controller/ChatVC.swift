@@ -35,6 +35,8 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         self.title = "ChatVC"
         self.navigationItem.hidesBackButton = true
         
+        uiView.layer.cornerRadius = 5
+        
         fetchUserContent()
         
         //Register TableViewCell XibFle
@@ -204,18 +206,22 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
         print(messageArray[indexPath.row].email)
         print(Auth.auth().currentUser?.email ?? "")
         
-        //Show user avatar
-        //cell.avatar.image = UIImage(named: "male-placeholder")
-        let url = URL(string: messageArray[indexPath.row].usersImageProfileLink)
-        let placeholder =  UIImage(named: "male-placeholder")
-        cell.avatar.kf.setImage(with: url , placeholder: placeholder)
-
-        
-        //Chnage Background
+        //Chnage Background and Avatar
         if  Auth.auth().currentUser?.email ?? ""  == (messageArray[indexPath.row].email).lowercased() {
-            cell.messageBackground.backgroundColor = UIColor.flatMint()
+            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+            cell.myAvatar.isHidden = false
+            cell.avatar.isHidden = true
+            let url = URL(string: messageArray[indexPath.row].usersImageProfileLink)
+            let placeholder =  UIImage(named: "male-placeholder")
+            cell.myAvatar.kf.setImage(with: url , placeholder: placeholder)
         } else {
-            cell.messageBackground.backgroundColor = UIColor.flatGray()
+            cell.messageBackground.backgroundColor = UIColor.flatWhite()
+            cell.myAvatar.isHidden = true
+            cell.avatar.isHidden = false
+            let url = URL(string: messageArray[indexPath.row].usersImageProfileLink)
+            let placeholder =  UIImage(named: "male-placeholder")
+            cell.avatar.kf.setImage(with: url , placeholder: placeholder)
+            
         }
         return cell
     }
