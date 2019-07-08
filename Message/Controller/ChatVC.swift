@@ -25,14 +25,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var uiView: UIView!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "ChatVC"
+        self.title = "Chat Room"
         self.navigationItem.hidesBackButton = true
         
         uiView.layer.cornerRadius = 5
