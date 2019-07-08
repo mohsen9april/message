@@ -117,10 +117,16 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
                 return
             }
             print("Messages Saved to Database Successfuly!")
+            self.messageTextField.text = ""
             self.messageTextField.endEditing(true)
             self.messageTextField.isEnabled = true
             self.sendBtn.isEnabled = true
-            self.messageTextField.text = ""
+            
+            //Show Last Cell in TableView
+            let lastRow: Int = self.chatTableView.numberOfRows(inSection: 0) - 1
+            let indexPath = IndexPath(row: lastRow, section: 0);
+            self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+
           }
       }
   }
@@ -162,6 +168,11 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
 
             self.messageArray.append(message)
             self.chatTableView.reloadData()
+            //Show Last Cell in TableView
+            let lastRow: Int = self.chatTableView.numberOfRows(inSection: 0) - 1
+            let indexPath = IndexPath(row: lastRow, section: 0);
+            self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+
         }
     }
 
