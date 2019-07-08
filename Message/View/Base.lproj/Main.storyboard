@@ -245,6 +245,7 @@
                         <outlet property="heightConstraint" destination="yx6-vI-gxs" id="C4G-iu-Dbf"/>
                         <outlet property="messageTextField" destination="qyT-ao-Ta7" id="4Ex-fo-1n7"/>
                         <outlet property="sendBtn" destination="ioG-Sz-GmI" id="JQW-YX-KZE"/>
+                        <outlet property="uiView" destination="cND-TA-jdg" id="qxN-Wj-RY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQf-Yf-t0w" userLabel="First Responder" sceneMemberID="firstResponder"/>

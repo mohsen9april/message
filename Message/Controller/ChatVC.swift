@@ -25,6 +25,10 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var uiView: UIView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +77,16 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
     func textFieldDidBeginEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3) {
             
+            self.chatTableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 1.0).isActive = true
+            self.chatTableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 1.0).isActive = true
+            self.chatTableView.rightAnchor.constraint(equalTo:self.view.rightAnchor, constant: -1.0).isActive = true
+            self.chatTableView.bottomAnchor.constraint(equalTo: self.uiView.topAnchor, constant: -1.0).isActive = true
+            
             self.heightConstraint.constant = 343
             self.view.layoutIfNeeded()
+
+            self.showLastCellInTableView()
+            
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -122,10 +134,7 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
             self.messageTextField.isEnabled = true
             self.sendBtn.isEnabled = true
             
-            //Show Last Cell in TableView
-            let lastRow: Int = self.chatTableView.numberOfRows(inSection: 0) - 1
-            let indexPath = IndexPath(row: lastRow, section: 0);
-            self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            self.showLastCellInTableView()
 
           }
       }
@@ -168,14 +177,19 @@ class ChatVC: UIViewController, UITextFieldDelegate , UITableViewDelegate , UITa
 
             self.messageArray.append(message)
             self.chatTableView.reloadData()
-            //Show Last Cell in TableView
-            let lastRow: Int = self.chatTableView.numberOfRows(inSection: 0) - 1
-            let indexPath = IndexPath(row: lastRow, section: 0);
-            self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+            self.showLastCellInTableView()
+
 
         }
     }
 
+    func showLastCellInTableView(){
+        
+        let lastRow: Int = self.chatTableView.numberOfRows(inSection: 0) - 1
+        let indexPath = IndexPath(row: lastRow, section: 0);
+        self.chatTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+    }
+    
     //Configure TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //return list.count
