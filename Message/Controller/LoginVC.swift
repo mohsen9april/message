@@ -17,6 +17,7 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Login"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

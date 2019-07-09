@@ -10,9 +10,16 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        imageView.layer.shadowColor = UIColor.darkGray.cgColor
+        imageView.layer.shadowOpacity = 5
+        imageView.layer.shadowRadius = 8
+        imageView.layer.cornerRadius = 10
         
         //Check Login
         if Auth.auth().currentUser != nil {
